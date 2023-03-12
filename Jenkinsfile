@@ -15,12 +15,13 @@ pipeline{
                 jdk 'JDK_17_UBUNTU'
             }
             steps {    
-                sh docker image build -t archanaraj/spc:latest .     
+                sh 'docker image build -t archanaraj/spc:latest .'     
             }
         }    
         stage('scan and push'){
             steps{
-               docker image push archanaraj/spc:latest
+               sh 'echo docker image scan archanaraj/spc:latest'
+               sh 'echo docker image push archanaraj/spc:latest'
             }
         }
     }    
