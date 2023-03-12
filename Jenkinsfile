@@ -6,14 +6,11 @@ pipeline{
     stages{ 
         stage('vcs'){
             steps {
-                git url: 'https://github.com/archanaraj-m/StudentCoursesRestAPI.git', 
-                    branch: 'studentdocker'
-            }
+                git branch: 'studentdocker',
+                    url: 'https://github.com/archanaraj-m/StudentCoursesRestAPI.git'
+            }        
         }
         stage('build'){
-            tools {
-                jdk 'JDK_17_UBUNTU'
-            }
             steps {    
                 sh 'docker image build -t archanaraj/spc:latest .'     
             }
