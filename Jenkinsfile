@@ -11,19 +11,18 @@ pipeline{
             }
         }
         stage('build'){
-            steps{
-                tools {
-                    jdk 'JDK_17_UBUNTU'
-                }
+            tools {
+                jdk 'JDK_17_UBUNTU'
             }
-        }            
-        stage('package'){
+            steps {    
+                sh docker image build -t archanaraj/spc:latest .     
+            }
+        }    
+        stage('scan and push'){
             steps{
-                
+               docker image push archanaraj/spc:latest
             }
         }
-            }
-        }
-    }
-
+    }    
 }
+
