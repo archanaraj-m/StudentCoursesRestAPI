@@ -1,7 +1,7 @@
 pipeline{
     agent{ label('bucket')}
     triggers{
-        POLLSCM(' * * * * * ')
+        pollSCM(' * * * * * ')
     }
     stages{ 
         stage('vcs'){
