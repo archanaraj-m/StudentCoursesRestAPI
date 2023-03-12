@@ -1,6 +1,6 @@
 pipeline{
     agent{ label('bucket')}
-    trigger{
+    triggers{
         POLLSCM(' * * * * * ')
     }
     stages{ 
