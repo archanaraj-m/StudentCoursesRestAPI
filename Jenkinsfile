@@ -12,7 +12,7 @@ pipeline{
         }
         stage('build'){
             steps {    
-                sh 'docker image build -t archanaraj/spc:latest .'     
+                sh 'sudo docker image build -t archanaraj/spc:latest .'     
             }
         }    
         stage('scan and push'){
